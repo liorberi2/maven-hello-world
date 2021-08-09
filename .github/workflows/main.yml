@@ -33,11 +33,11 @@ jobs:
         run: mvn -b package --file pom.xml
         
          
-      - name: Step 4 - List of current directory
-        run: ls -a
+      #- name: Step 4 - List of current directory
+        #run: ls -a
       
-          name:Step 5 - show target folder
-          run:|
-             cd target
-             ls -a
+          #name:Step 5 - show target folder
+          #run:|
+             #cd target
+             #ls -a
         
