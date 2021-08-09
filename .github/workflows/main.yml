@@ -30,7 +30,8 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
 
       - name: Step 3 - Github Action build Maven project
-        run: mvn -b package --file /usr/local/bin/git/maven-hello-world/maven-hello-world/my-app/pom.xml
+        run: mvn -f /usr/local/bin/git/pom.xml
+        #run: mvn -b package --file /usr/local/bin/git/maven-hello-world/maven-hello-world/my-app/pom.xml
         
          
       - name: Step 4 - List of current directory
