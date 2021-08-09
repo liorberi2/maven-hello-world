@@ -38,7 +38,7 @@ jobs:
          mvn clean package test
 
       - name: Step 3 - Github Action build Maven project
-        run: mvn -b package /maven-hello-world/maven-hello-world/my-app/pom.xml
+        run: mvn -b package /maven-hello-world/maven-hello-world/my-app/pom.xml -e switch
         #run: mvn -b package --file /usr/local/bin/git/maven-hello-world/maven-hello-world/my-app/pom.xml
         
          
