@@ -26,20 +26,12 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: enter directory
-        run: mvn --batch-mode --update-snapshots verify    
+      #- name: enter directory
+       # run: mvn --batch-mode --update-snapshots verify    
   
-      - name: Install maven
-        run: |
-           
-      - name: Run maven command
-        run: |
-         cd ./java
-         mvn clean package test
-
       - name: Step 3 - Github Action build Maven project
-        run: mvn -b package /maven-hello-world/maven-hello-world/my-app/pom.xml -e switch
-        #run: mvn -b package --file /usr/local/bin/git/maven-hello-world/maven-hello-world/my-app/pom.xml
+        run: mvn -b package --file liorberi2/maven-hello-world/my-app/pom.xml  
+        #run: mvn -b package --file liorberi2/maven-hello-world/my-app/pom.xml
         
          
       - name: Step 4 - List of current directory
