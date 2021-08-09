@@ -26,11 +26,14 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Maven
+      - name: enter directory
         run: mvn --batch-mode --update-snapshots verify
+        
+      - name: enter pom folder
+        run: cd maven-hello-world/my-app
           
       - name: Step 3 - Github Action build Maven project
-        run: mvn -b package --file maven-hello-world/my-app/pom.xml
+        run: mvn -b package --file pom.xml
         
          
       - name: Step 4 - List of current directory
