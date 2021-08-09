@@ -29,7 +29,7 @@ jobs:
     
       - name: Step 3 - Github Action build Maven project
         run: |
-          mvn -f package my-app/pom.xml clean install dependency:copy-dependencies 
+          mvn -f my-app/pom.xml clean install dependency:copy-dependencies 
          
          
       - name: Step 4 - List of current directory
