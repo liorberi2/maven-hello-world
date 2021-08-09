@@ -26,14 +26,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      #- name: enter directory
-       # run: mvn --batch-mode --update-snapshots verify    
-  
+    
       - name: Step 3 - Github Action build Maven project
         run: |
           mvn -b package --file pom.xml  
-        #run: mvn -b package --file liorberi2/maven-hello-world/my-app/pom.xml
-        
+         
          
       - name: Step 4 - List of current directory
         run: ls -a
