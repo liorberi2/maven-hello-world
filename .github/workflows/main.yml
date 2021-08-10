@@ -24,7 +24,9 @@ jobs:
           with:java-version:11 
             
         name: Step 3 - Github Action build Maven project
-        run: mvn -b package --file pom.xml
+         run:| 
+           cd my-app
+           mvn -b package --file pom.xml
         
          
           name:Step 4 - List of current directory
