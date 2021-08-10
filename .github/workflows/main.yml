@@ -31,7 +31,7 @@ jobs:
       - name: Step 3 - Github Action build Maven project
         run: | 
           cd my-app
-          mvn -b package --file pom.xml
+          mvn -B package --file pom.xml
         
          
   
