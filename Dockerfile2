@@ -1,0 +1,3 @@
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:1.0.${{ github.run_number }}
