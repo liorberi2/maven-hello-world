@@ -1,3 +1,14 @@
-      - name: Push Docker Image
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:1.0.${{ github.run_number }}
+FROM openjdk:8-jdk-alpine as builder
+RUN ./mvnw clean package
+
+FROM builder
+# copy application jar (with libraries inside)
+WORKDIR /app
+
+FROM builder
+COPY target/my-app*.jar ./my-app.jar
+CMD ["/usr/bin/java", "-jar", "/app/my-app.jar"]
+
+  
+
+ 
