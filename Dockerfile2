@@ -2,7 +2,6 @@ FROM openjdk:8-jdk-alpine as builder
 RUN ./mvnw clean package
 
 FROM builder
-WORKDIR /app
 RUN docker build Dockerfile2 -t ${{ secrets.DOCKER_USERNAME }}/my-app:1.0.${{ github.run_number }}
 
 FROM builder
