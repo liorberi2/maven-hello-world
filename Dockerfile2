@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine as builder
 RUN ./mvnw clean package
 
 FROM builder
-# copy application jar (with libraries inside)
+#copy application jar (with libraries inside)
 WORKDIR /app
 
 FROM builder
