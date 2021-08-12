@@ -1,5 +1,7 @@
 FROM openjdk:8-jdk-alpine as builder
-RUN ./mvnw clean package
+RUN mvn versions:set -DnewVersion=1.0.${{ github.run_number }}
+RUN mvn -B  clean package 
+RUN mkdir artifact && cp target/*.jar artifact
 
 FROM fabric8/java-alpine-openjdk8-jre
 WORKDIR /app
