@@ -6,7 +6,7 @@ FROM builder
 WORKDIR /app
 
 FROM builder
-COPY target/my-app*.jar ./my-app.jar
+COPY my-app/target/my-app*.jar ./my-app.jar
 CMD ["/usr/bin/java", "-jar", "/app/my-app.jar"]
 
 #FROM builder
