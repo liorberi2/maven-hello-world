@@ -9,6 +9,8 @@ FROM builder
 COPY target/my-app*.jar ./my-app.jar
 CMD ["/usr/bin/java", "-jar", "/app/my-app.jar"]
 
+FROM builder
+RUN docker run ${{ secrets.DOCKER_USERNAME }}/my-app:1.0.${{ github.run_number }}
   
 
  
