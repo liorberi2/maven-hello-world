@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine as builder
-RUN mvn versions:set -DnewVersion=1.0.${{ github.run_number }}
+RUN mvn versions:set -DnewVersion=1.0.50
 RUN mvn -B  clean package 
 RUN mkdir artifact && cp target/*.jar artifact
 
