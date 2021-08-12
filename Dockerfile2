@@ -1,6 +1,6 @@
 FROM maven:3.8-ibmjava-alpine as builder
 WORKDIR /app
-COPY ./myapp .
+COPY ./my-app .
 RUN mvn versions:set -DnewVersion=1.0.50
 RUN mvn -B  clean package 
 RUN mkdir artifact && cp target/*.jar artifact
