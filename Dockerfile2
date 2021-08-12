@@ -1,13 +1,15 @@
 FROM openjdk:8-jdk-alpine as builder
 RUN ./mvnw clean package
 
-FROM builder
-#copy application jar (with libraries inside)
+FROM fabric8/java-alpine-openjdk8-jre
 WORKDIR /app
-
-FROM builder
-COPY my-app/target/my-app*.jar ./my-app.jar
+#copy application jar (with libraries inside)
+COPY --from=builder my-app/target/my-app*.jar ./app/my-app.jar
 CMD ["/usr/bin/java", "-jar", "/app/my-app.jar"]
+
+#FROM builder
+#COPY my-app/target/my-app*.jar ./my-app.jar
+#CMD ["/usr/bin/java", "-jar", "/app/my-app.jar"]
 
 #FROM builder
 #RUN docker run liorberi/my-app:1.0.${{ github.run_number }}
