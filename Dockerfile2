@@ -1,4 +1,4 @@
-FROM maven:3.8-ibmjava-alpine as builder
+FROM maven as builder
 WORKDIR /app
 COPY ./my-app .
 RUN mvn versions:set -DnewVersion=1.0.50
